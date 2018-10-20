@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DateYourFood</string>
+    <string name="welcome_msg">Welcome to Date your Food!</string>
+    <string name="welcome_sub_msg">-Don\'t let it expire!</string>
+    <string name="item_hint">What did you buy today?</string>
+    <string name="expr_hint">Expires in _______ days.</string>
+    <string name="btn_text">SUBMIT</string>
+    <string name="expr_data_hint">Pick a date!</string>
+    <string name="or">Or</string>
+    <string name="saved">Your item %s is saved!</string>
+</resources>
