@@ -8,4 +8,5 @@
     <string name="expr_data_hint">Pick a date!</string>
     <string name="or">Or</string>
     <string name="saved">Your item %s is saved!</string>
+    <string name="show_list">Show me my list</string>
 </resources>

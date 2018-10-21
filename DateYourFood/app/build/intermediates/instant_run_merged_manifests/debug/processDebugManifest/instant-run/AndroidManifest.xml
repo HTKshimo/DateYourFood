@@ -28,13 +28,10 @@
         <activity
             android:name="happyeater.com.dateyourfood.DisplayMessageActivity"
             android:parentActivityName="happyeater.com.dateyourfood.MainActivity" >
-
-            <!-- The meta-data tag is required if you support API level 15 and lower -->
-            <!--
-                meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" /
-            -->
+        </activity>
+        <activity
+            android:name="happyeater.com.dateyourfood.PlanExpiringFood"
+            android:parentActivityName="happyeater.com.dateyourfood.MainActivity" >
         </activity>
 
         <provider

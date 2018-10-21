@@ -10,44 +10,43 @@
         android:id="@+id/btn_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="24dp"
         android:text="@string/expr_data_hint"
-        app:layout_constraintBottom_toBottomOf="@+id/in_date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/in_date"
-        app:layout_constraintTop_toTopOf="@+id/in_date" />
+        app:layout_constraintEnd_toStartOf="@+id/expiryDateInput2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/expiryDateInput1"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="312dp"
         android:layout_height="40dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:text="@string/welcome_msg"
         android:textSize="24sp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/foodNameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="@string/item_hint"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/expiryDateInput1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -55,20 +54,23 @@
         android:hint="@string/expr_hint"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintEnd_toEndOf="@+id/foodNameInput"
+        app:layout_constraintStart_toStartOf="@+id/foodNameInput"
+        app:layout_constraintTop_toBottomOf="@+id/foodNameInput" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/submitData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
         android:onClick="saveData"
         android:text="@string/btn_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/in_date" />
+        app:layout_constraintEnd_toEndOf="@+id/expiryDateInput2"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/btn_date"
+        app:layout_constraintTop_toBottomOf="@+id/expiryDateInput2" />
 
     <TextView
         android:id="@+id/textView4"
@@ -79,29 +81,52 @@
         android:text="@string/or"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/expiryDateInput1" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
         android:layout_marginTop="36dp"
         android:text="@string/welcome_sub_msg"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/in_date"
+        android:id="@+id/expiryDateInput2"
         android:layout_width="157dp"
         android:layout_height="40dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="24dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_date"
+        app:layout_constraintEnd_toEndOf="@+id/expiryDateInput1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_date"
+        app:layout_constraintTop_toTopOf="@+id/btn_date" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/show_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/submitData"
+        app:layout_constraintStart_toStartOf="@+id/submitData" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnAlert"
+        android:layout_width="41dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="36dp"
+        android:clickable="true"
+        android:onClick="alert"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/button"
+        app:srcCompat="?android:attr/alertDialogIcon" />
 
 </android.support.constraint.ConstraintLayout>

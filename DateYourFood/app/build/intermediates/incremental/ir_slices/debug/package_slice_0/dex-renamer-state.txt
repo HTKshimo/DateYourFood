@@ -1,4 +1,4 @@
-#Sat Oct 20 11:24:35 CDT 2018
+#Sun Oct 21 03:06:30 CDT 2018
 base.0=C\:\\Users\\lishu\\AndroidStudioProjects\\DateYourFood\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
