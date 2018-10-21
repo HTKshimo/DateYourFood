@@ -29,33 +29,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
-        initialize();
+//         initialize();
     }
 
     // Check for the correct values of days_left attribute in the table
-    public void initialize() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        List<Food> food = new ArrayList<Food>();
-        food = getListContents();
-        for (Food f : food) {
-            String expiryDateString = f.getExpiry_date();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            // Get Current Date in LocalData type
-            LocalDate local_current_date = LocalDate.now();
-            LocalDate local_expiry_date = LocalDate.parse(expiryDateString, formatter);
-            // Get the difference between the two dates
-            long difference = ChronoUnit.DAYS.between(local_current_date, local_expiry_date);
-            int days_left = (int) difference;
-            ContentValues cv = new ContentValues();
-            int id = f.getID();
-            String[] arg = new String[1];
-            arg[0] = id + "";
-            cv.put(COL_NAME, f.getName());
-            cv.put(COL_DATE, f.getExpiry_date());
-            cv.put(COL_DAYS, days_left);
-            db.update(TABLE_NAME, cv, "ID = ?", arg);
-        }
-    }
+//     public void initialize() {
+//         SQLiteDatabase db = this.getWritableDatabase();
+//         List<Food> food = new ArrayList<Food>();
+//         food = getListContents();
+//         for (Food f : food) {
+//             String expiryDateString = f.getExpiry_date();
+//             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//             // Get Current Date in LocalData type
+//             LocalDate local_current_date = LocalDate.now();
+//             LocalDate local_expiry_date = LocalDate.parse(expiryDateString, formatter);
+//             // Get the difference between the two dates
+//             long difference = ChronoUnit.DAYS.between(local_current_date, local_expiry_date);
+//             int days_left = (int) difference;
+//             ContentValues cv = new ContentValues();
+//             int id = f.getID();
+//             String[] arg = new String[1];
+//             arg[0] = id + "";
+//             cv.put(COL_NAME, f.getName());
+//             cv.put(COL_DATE, f.getExpiry_date());
+//             cv.put(COL_DAYS, days_left);
+//             db.update(TABLE_NAME, cv, "ID = ?", arg);
+//         }
+//     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
